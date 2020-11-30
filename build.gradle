@@ -1,0 +1,26 @@
+plugins {
+  id 'kr.entree.spigradle' version '2.2.3'
+  id 'idea'
+}
+
+repositories {
+  maven { url 'https://dev.ME1312.net/maven' }
+}
+
+dependencies {
+  compileOnly spigot('1.16.4')
+  compileOnly 'net.ME1312.SubServers:SubServers.Client.Bukkit:+'
+}
+
+spigot {
+  authors "Red3842"
+  apiVersion "1.16"
+  depends 'SubServers-Client-Bukkit'
+
+  commands {
+    server2 {
+      usage "/server2 <server>"
+      description "Switch to a server, or start it if it's not running."
+    }
+  }
+}
